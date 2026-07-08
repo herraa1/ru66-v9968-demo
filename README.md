@@ -1,14 +1,16 @@
 # RU66 V9968 demo example
 
-This is a modified version of [Takayuki Hara's](https://github.com/hra1129) [DEVCON 14 V9968 demo](https://github.com/hra1129/TangCartMSX/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon) that was shown on June 27th 2026 at the [AAMSX](https://www.aamsx.com) [RU66](https://www.aamsx.com/news/424) meeting in Barcelona (Spain).
+This is a modified version of [Takayuki Hara's](https://github.com/hra1129) [DEVCON 14 V9968 demo](https://www.youtube.com/watch?v=NsLTHx8BZzk) that was shown on June 27th 2026 at the [AAMSX](https://www.aamsx.com) [RU66](https://www.aamsx.com/news/424) meeting in Barcelona (Spain).
 
 ![ru66-v9968-demo-animated](images/ru66-v9968-demo-animated.gif)
 
 The original demo by HRA! has been modified in the following way:
 - it builds under [MSXgl](https://aoineko.org/msxgl/index.php?title=Main_Page)
 - it runs continuously and features a carrousel of 10 different backgrounds which cycle sequentially
-- the demo advances automatically after a certain time, without the need to press DOWN (you can still use DOWN to advance manually the demo)
+- tearing artifacts have been eliminated
+- the demo advances automatically after a certain time without the need to press DOWN (you can still use DOWN to advance manually the demo if desired)
 - the demo is ended by pressing SPACE and returns to DOS instead of hanging
+
 
 ## Requirements
 
@@ -21,22 +23,24 @@ This is a list of V9968 cartridges that are able to run the demo:
 * [WonderTANG! 1.02d](https://github.com/lfantoniosi/WonderTANG#v102d-previous) with [tangnano20k_vdp_cartridge_wt102d.fs](https://github.com/herraa1/wonder9968/blob/port-wondertang-r2/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt102d.fs) from the [wonder9968](https://github.com/herraa1/wonder9968) project
 * [WonderTANG! 2.00b](https://github.com/lfantoniosi/WonderTANG#v20av20b-new) with [tangnano20k_vdp_cartridge_wt200b.fs](https://github.com/herraa1/wonder9968/blob/port-wondertang-r2/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt200b.fs) from the [wonder9968](https://github.com/herraa1/wonder9968) project
 
+
 ## How to run
 
 ### Using a DSK file
 
-Boot the already built `emul/dsk/DOS2_RU66.dsk` if you are using OpenMSX with V9968 support, or a cartridge that supports the direct use of DSK files.
+Boot the already built [`emul/dsk/DOS2_RU66.dsk`](emul/dsk/DOS2_RU66.dsk) if you are using OpenMSX with V9968 support, or a cartridge that supports the direct use of DSK files.
 
 ### Using DOS2/Nextor
 
-Copy all the files under `emul/dos2` to your storage device of choice (floppy, WonderTANG!, FlashJacks, etc.) and run `RU66.COM`.
+Copy all the files under [`emul/dos2`](emul/dos2/) to your storage device of choice (floppy, WonderTANG!, FlashJacks, etc.) and run `RU66.COM`.
 
 > [!NOTE]
 > Do not copy `autoexec.bat`, `COMMAND2.COM` nor `MSXDOS2.SYS` if you don't need to boot from your media.
 
+
+## References
+
+* [Original DEVCON 14 V9968 demo source code](https://github.com/hra1129/TangCartMSX/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon)
+
+
 [^1]: The RTL used is slightly outdated as the demo was written to be run on all listed cartridges and the Wonder9968 RTL has not been updated with the latest V9968 breaking changes. If you run the demo with a recent RTL it will not show correctly the text boxes. That can be easily corrected by changing register 0x20 initialization from 0xff to 0x9f in reg_data[] in msx_vdp.c and rebuilding the demo.
-
-
-
-
-
