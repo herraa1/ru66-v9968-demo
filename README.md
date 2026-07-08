@@ -2,6 +2,8 @@
 
 This is a modified version of [Takayuki Hara's](https://github.com/hra1129) [DEVCON 14 V9968 demo](https://github.com/hra1129/TangCartMSX/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon) that was shown on June 27th 2026 at the [AAMSX](https://www.aamsx.com) [RU66](https://www.aamsx.com/news/424) meeting in Barcelona (Spain).
 
+![ru66-v9968-demo-animated](images/ru66-v9968-demo-animated.gif)
+
 The original demo by HRA! has been modified in the following way:
 - it builds under [MSXgl](https://aoineko.org/msxgl/index.php?title=Main_Page)
 - it runs continuously and features a carrousel of 10 different backgrounds which cycle sequentially
